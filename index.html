@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Menu &amp; CSS</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="script.js"></script> <!-- Carica il file JavaScript -->
+</head>
+<body>
+
+  <!-- NAVBAR (NESSUNA MODIFICA) -->
+  <nav>
+    <div class="wrapper">
+	
+      <div class="logo">
+		  <a href="#">
+			<img src="Immagini\LOGO_UNISI_ORIZZONTALE_NERO.jpg" alt="Logo">
+		  </a>
+		</div>
+
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a href="#" onclick="loadPage('index')">Home</a></li>
+        <li><a href="#" onclick="loadPage('people')">People</a></li>
+		
+        <li>
+		  <a href="#" class="desktop-item">Research</a>
+		  <input type="checkbox" id="showMega">
+		  <label for="showMega" class="mobile-item">Research</label>
+		  <div class="mega-box">
+			<div class="content">
+			  <div class="row">
+				<header>Forecasting</header>
+				<ul class="mega-links">
+				  <li><a href="#" onclick="loadPage('renewable_forecasting')">Load, flexibility and renewables forecasting</a></li>
+				  <li><a href="#">Topic 2</a></li>
+				</ul>
+			  </div>
+			  <div class="row">
+				<header>AI & Machine Learning</header>
+				<ul class="mega-links">
+				  <li><a href="#">Deep Learning</a></li>
+				  <li><a href="#">Neural Networks</a></li>
+				  <li><a href="#">Reinforcement Learning</a></li>
+				</ul>
+			  </div>
+			  <div class="row">
+				<header>Energy Systems</header>
+				<ul class="mega-links">
+				  <li><a href="#">Smart Grids</a></li>
+				  <li><a href="#">Energy Storage</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		</li>
+		
+        <li><a href="#" onclick="loadPage('collaborations')">International Collaborations</a></li>
+        <li><a href="#" onclick="loadPage('projects')">Projects</a></li>
+        <li><a href="#" onclick="loadPage('awards')">Awards</a></li>
+        <li><a href="#" onclick="loadPage('publications')">Publications</a></li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- CONTENUTO DINAMICO -->
+  <div id="content">
+    <div class="body-text">
+      <div class="title">Pagina Web che al Paoletti piacerà molto</div>
+      <div class="sub-title">usando solo HTML & CSS & JavaScript</div>
+    </div>
+  </div>
+
+</body>
+</html>

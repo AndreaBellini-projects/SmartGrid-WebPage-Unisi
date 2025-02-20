@@ -1,0 +1,103 @@
+/* Stile per la sezione */
+.people-section {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding-top: 140px;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: auto;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Contenitore delle card */
+.people-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1500px;
+    margin: 50px auto;
+    margin-top: 60px;
+}
+
+/* Card dei membri del team */
+.person-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Immagine del membro */
+.person-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid #007bff;
+}
+
+/* Info della persona */
+.person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+
+.person-info h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    min-height: 3.2em; /* Garantisce spazio sufficiente per due righe */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.person-info p {
+    font-size: 1em;
+    color: #777;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+/* Stile dei pulsanti */
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
