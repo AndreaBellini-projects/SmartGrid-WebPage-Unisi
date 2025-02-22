@@ -1,24 +1,24 @@
 function loadPage(page) {
-    fetch(page + '.html')
+    fetch(page + '.html') // Fetch the new page content
         .then(response => response.text())
         .then(data => {
-            // Aggiorna solo il contenuto, senza cambiare l'URL
+            // Replace the content inside the #content div
             document.getElementById("content").innerHTML = data;
 
-            // Modifica la cronologia per mantenere l'URL fisso
-            history.pushState(null, "", "index.html");  // L'URL rimane index.html
-
-            // Carica dinamicamente anche il CSS specifico
+            // Optionally, load a specific CSS file for the page
             let existingCSS = document.getElementById("dynamic-css");
             if (existingCSS) {
-                existingCSS.remove();
+                existingCSS.remove(); // Remove existing CSS if any
             }
 
             let cssLink = document.createElement("link");
             cssLink.rel = "stylesheet";
-            cssLink.href = page + ".css"; 
+            cssLink.href = page + ".css"; // Link to page-specific CSS file
             cssLink.id = "dynamic-css";
             document.head.appendChild(cssLink);
+
+            // Update URL without refreshing the page (optional)
+            history.pushState(null, "", "index.html"); // Stay on the same page
         })
         .catch(error => console.error('Error loading the page:', error));
 }
