@@ -27,8 +27,8 @@ body {
 .people-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1500px;
+    gap: 20px;
+    max-width: 2000px;
     margin: 50px auto;
     margin-top: 60px;
 }
