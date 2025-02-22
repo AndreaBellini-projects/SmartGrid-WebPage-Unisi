@@ -2,23 +2,23 @@ function loadPage(page) {
     fetch(page + '.html')
         .then(response => response.text())
         .then(data => {
-            // Replace content without touching the menu
+            // Aggiorna solo il contenuto, senza cambiare l'URL
             document.getElementById("content").innerHTML = data;
 
-            // Remove any previously loaded research CSS
-            let oldLink = document.getElementById("dynamic-css");
-            if (oldLink) {
-                oldLink.remove();
+            // Modifica la cronologia per mantenere l'URL fisso
+            history.pushState(null, "", "index.html");  // L'URL rimane index.html
+
+            // Carica dinamicamente anche il CSS specifico
+            let existingCSS = document.getElementById("dynamic-css");
+            if (existingCSS) {
+                existingCSS.remove();
             }
 
-            // Add the new CSS if it's for research
-            if (page === "research") {
-                let link = document.createElement("link");
-                link.rel = "stylesheet";
-                link.href = "research.css";
-                link.id = "dynamic-css"; // Add an ID for easy removal later
-                document.head.appendChild(link);
-            }
+            let cssLink = document.createElement("link");
+            cssLink.rel = "stylesheet";
+            cssLink.href = page + ".css"; 
+            cssLink.id = "dynamic-css";
+            document.head.appendChild(cssLink);
         })
         .catch(error => console.error('Error loading the page:', error));
 }
